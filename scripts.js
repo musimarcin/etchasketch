@@ -12,8 +12,8 @@ function getSize() {
 let size = input.addEventListener("change", getSize);
 
 function createGrid(size) {
-   // let container_size = document.getElementById("container").style.width;
-    let grid_size = 500/size;
+    let container_size = container.clientWidth;
+    let grid_size = container_size/size;
     let grid_in_string = grid_size.toString()+"px";
 
     for (let i = 0; i < (size*size); i++) {
@@ -22,5 +22,5 @@ function createGrid(size) {
         container.appendChild(grid);
     }
 
-    document.querySelectorAll(".grid").forEach(el => el.style.width=grid_in_string);
+    document.querySelectorAll(".grid").forEach(item => item.style.width=grid_in_string);
 }
