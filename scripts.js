@@ -1,26 +1,38 @@
-const container = document.querySelector("#container")
-const input = document.querySelector("input");
+const container = document.querySelector('#container')
+const input = document.querySelector('input');
+const clear = document.querySelector('button');
+
+
+input.addEventListener("change", getSize);
+clear.addEventListener("click", function () {
+    document.querySelectorAll('.grid').forEach(item => item.classList.remove('hovered'))
+});
 
 function getSize() {
-    if (Number.isInteger(parseInt(this.value))) {
+    let size = parseInt(this.value);
+    if (Number.isInteger(size) && size < 65) {
         createGrid(parseInt(this.value));
     } else {
-        alert("NaN");
+        alert("NaN or too big");
     }
 }
 
-let size = input.addEventListener("change", getSize);
-
 function createGrid(size) {
-    let container_size = container.clientWidth;
-    let grid_size = container_size/size;
+    let grid_size = container.clientWidth/size;
     let grid_in_string = grid_size.toString()+"px";
+
+    let existed_grid = document.querySelectorAll(".grid");
+    existed_grid.forEach(item => container.removeChild(item));
 
     for (let i = 0; i < (size*size); i++) {
         const grid = document.createElement('div');
-        grid.setAttribute("class", "grid");
+        grid.setAttribute('class', 'grid');
         container.appendChild(grid);
     }
 
     document.querySelectorAll(".grid").forEach(item => item.style.width=grid_in_string);
+    document.querySelectorAll(".grid").forEach(item => item.addEventListener('mouseenter', function () {
+        item.classList.add('hovered')
+    }))
 }
+
