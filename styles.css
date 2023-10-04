@@ -3,6 +3,13 @@ body {
     gap: 16px;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+}
+
 .user-input {
     display: flex;
     flex-direction: column;
@@ -10,16 +17,50 @@ body {
     align-items: center;
 }
 
-input {
+#size {
     width: 200px;
     font-size: 16px;
     height: 20px;
+    text-align: center;
 }
 
-button {
+#clear {
     padding: 8px;
     font-size: 12px;
     width: 100px;
+}
+
+#black {
+    background-color: black;
+}
+
+#rainbow {
+    background: url("img/rainbow.png");
+    background-size: 100%;
+}
+
+#gradient {
+    background: url("img/gradient.png");
+    background-size: 100%;
+}
+
+.color-select div input{
+    padding: 0;
+    height: 50px;
+    width: 50px;
+}
+
+.color-select div {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.color-select {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
 }
 
 #container {
@@ -30,6 +71,14 @@ button {
     flex-wrap: wrap;
 }
 
+.cleared {
+    background-color: white;
+}
+
 .hovered {
     background-color: black;
+}
+
+p {
+    margin-top: 8px;
 }

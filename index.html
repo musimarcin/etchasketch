@@ -8,11 +8,26 @@
     <title>Etch-A-Sketch</title>
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
+    <style></style>
 </head>
 <body>
 <div class="user-input">
-    <input type="text">
-    <button>CLEAR</button>
+    <form>
+    <label>Enter square size</label>
+    <input type="text" id="size">
+    </form>
+    <div class="color-select">
+        <div>
+            <input type="button" id="black">
+            <input type="color" id="color">
+        </div>
+        <div>
+            <input type="button" id="rainbow">
+            <input type="button" id="gradient">
+        </div>
+        <p>Select color to start a sketch.</p>
+    </div>
+    <button id="clear">CLEAR</button>
 </div>
 <div id="container"></div>
 </body>
